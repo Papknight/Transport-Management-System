@@ -1,0 +1,41 @@
+{% extends 'Monitoring/base.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}Order{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'base.css' %}">{% endblock %}
+{% block nav %}
+Take an appointment
+{% endblock %}
+{% block nav_desc %}
+Fill all fields to correctly book delivery.
+{% endblock %}
+{% block content %}
+<div class="card mar" style="width: 30rem;">
+  <div class="card-body">
+          {% if new %}
+        <h5 class="card-title">New order</h5>
+    {% else %}
+        <h5 class="card-title">Update order</h5>
+    {% endif %}
+<form method="POST" enctype="multipart/form-data">
+    {{form|bootstrap}}
+    {% if new %}
+    <button type="submit" class="btn btn-success">Add order</button>
+    {% else %}
+    <button type="submit" class="btn btn-primary">Update order</button>
+    {% endif %}
+    {% csrf_token %}
+</form>
+  </div>
+</div>
+<div class="card mar" style="width: 30rem;">
+  <div class="card-body">
+<h1>Tomorrow's schedule</h1>
+      {% for order in orders %}
+      <p>{{order.hour}} - {{order.supplier.name}}</p>
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}

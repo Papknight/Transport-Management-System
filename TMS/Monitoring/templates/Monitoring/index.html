@@ -1,10 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Strona głowna</h1>
-</body>
-</html>
+{% extends 'Monitoring/base.html' %}
+{% load static %}
+{% block title %}Main page{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'base.css' %}">{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<div id="clock">
+<script>
+    function currentTime() {
+  let date = new Date();
+  let year = date.getFullYear();
+  let month = date.getMonth();
+  let day = date.getDay();
+  let hour = date.getHours();
+  let min = date.getMinutes();
+  let sec = date.getSeconds();
+  month = updateTime(month);
+  day = updateTime(day);
+  hour = updateTime(hour);
+  min = updateTime(min);
+  sec = updateTime(sec);
+  document.getElementById("clock").innerText = day + " - " + month + " - " + year + "\n" + hour + " : " + min + " : " + sec;
+  let t = setTimeout(function(){ currentTime() }, 1000);
+}
+
+function updateTime(k) {
+  if (k < 10) {
+    return "0" + k;
+  }
+  else {
+    return k;
+  }
+}
+
+currentTime();
+</script>
+</div>
+
+    {% else %}
+    <h1 class="display-4">Witaj nieznajomy</h1>
+<a href="{% url 'login' %}" class="btn btn-success">Login
+<i class="fas fa-sign-in-alt"></i></a>
+    <h1>Aby korzystać ze strony musisz się zalogować!</h1>
+{% endif %}
+</div>
+
+<img alt="" src="=img/logo.png" width="100%" height=100%>
+{% endblock %}

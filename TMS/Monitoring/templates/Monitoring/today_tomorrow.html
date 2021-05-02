@@ -1,0 +1,486 @@
+{% extends 'Monitoring/base.html' %}
+{% load static %}
+{% block title %}Monitoring{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'base.css' %}">{% endblock %}
+
+{% block nav %}
+{{today}}
+{% endblock %}
+
+{% block nav_desc %}
+
+{% endblock %}
+
+{% block content %}
+<div class="cokolwiek">
+<div class="left">
+<div class="card mar" style="width: 34rem;">
+  <div class="card-body">
+<h1>Today's {{today}} schedule</h1>
+      <table style="width:100%">
+          <tr>
+              <th>Hour</th>
+              <th>Supplier</th>
+              <th>Pallets</th>
+          </tr>
+      <tr>
+      <td><b>6:00</b></td>
+          {% for item in six %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
+      {% endfor %}
+      </tr>
+          <tr>
+      <td><b>6:30</b></td>
+      {% for item in six_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>7:00</b></td>
+      {% for item in seven %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>7:30</b></td>
+      {% for item in seven_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>8:00</b></td>
+      {% for item in eight %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>8:30</b></td>
+      {% for item in eight_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>9:00</b></td>
+      {% for item in nine %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>9:30</b></td>
+      {% for item in nine_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>10:00</b></td>
+      {% for item in ten %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>10:30</b></td>
+      {% for item in ten_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>11:00</b></td>
+      {% for item in eleven %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>11:30</b></td>
+      {% for item in eleven_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>12:00</b></td>
+      {% for item in twelve %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>12:30</b></td>
+      {% for item in twelve_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>13:00</b></td>
+      {% for item in thirteen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>13:30</b></td>
+      {% for item in thirteen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>14:00</b></td>
+      {% for item in fourteen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>14:30</b></td>
+      {% for item in fourteen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>15:00</b></td>
+      {% for item in fifteen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>15:30</b></td>
+      {% for item in fifteen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>16:00</b></td>
+      {% for item in sixteen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>16:30</b></td>
+      {% for item in sixteen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>17:00</b></td>
+      {% for item in seventeen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>17:30</b></td>
+      {% for item in seventeen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>18:00</b></td>
+      {% for item in eighteen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>18:30</b></td>
+      {% for item in eighteen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>19:00</b></td>
+      {% for item in nineteen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>19:30</b></td>
+      {% for item in eighteen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>20:00</b></td>
+      {% for item in twenty %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>20:30</b></td>
+      {% for item in twenty_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>21:00</b></td>
+      {% for item in twenty_one %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>21:30</b></td>
+      {% for item in twenty_one_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+                </tr>
+      </table>
+</div>
+</div>
+</div>
+
+<div class="right">
+<div class="card mar" style="width: 34rem;">
+  <div class="card-body">
+<h1>Today's {{today}} schedule</h1>
+      <table style="width:100%">
+          <tr>
+              <th>Hour</th>
+              <th>Supplier</th>
+              <th>Pallets</th>
+          </tr>
+      <tr>
+      <td><b>6:00</b></td>
+          {% for item in six %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
+      {% endfor %}
+      </tr>
+          <tr>
+      <td><b>6:30</b></td>
+      {% for item in six_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>7:00</b></td>
+      {% for item in seven %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>7:30</b></td>
+      {% for item in seven_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>8:00</b></td>
+      {% for item in eight %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>8:30</b></td>
+      {% for item in eight_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>9:00</b></td>
+      {% for item in nine %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>9:30</b></td>
+      {% for item in nine_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>10:00</b></td>
+      {% for item in ten %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>10:30</b></td>
+      {% for item in ten_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>11:00</b></td>
+      {% for item in eleven %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+      <td><b>11:30</b></td>
+      {% for item in eleven_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>12:00</b></td>
+      {% for item in twelve %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+      <td><b>12:30</b></td>
+      {% for item in twelve_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>13:00</b></td>
+      {% for item in thirteen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+      <td><b>13:30</b></td>
+      {% for item in thirteen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>14:00</b></td>
+      {% for item in fourteen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+      <td><b>14:30</b></td>
+      {% for item in fourteen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>15:00</b></td>
+      {% for item in fifteen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+      <td><b>15:30</b></td>
+      {% for item in fifteen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>16:00</b></td>
+      {% for item in sixteen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+      <td><b>16:30</b></td>
+      {% for item in sixteen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>17:00</b></td>
+      {% for item in seventeen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+      <td><b>17:30</b></td>
+      {% for item in seventeen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>18:00</b></td>
+      {% for item in eighteen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+      <td><b>18:30</b></td>
+      {% for item in eighteen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>19:00</b></td>
+      {% for item in nineteen %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+      <td><b>19:30</b></td>
+      {% for item in eighteen_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>20:00</b></td>
+      {% for item in twenty %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+      <td><b>20:30</b></td>
+      {% for item in twenty_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+          <tr>
+      <td><b>21:00</b></td>
+      {% for item in twenty_one %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+      <td><b>21:30</b></td>
+      {% for item in twenty_one_half %}
+              <td>{{item.supplier.name}}</td>
+              <td>{{item.pallet}}</td>
+      {% endfor %}
+              </tr>
+
+</table>
+</div>
+  </div>
+</div>
+    </div>
+{% endblock %}
