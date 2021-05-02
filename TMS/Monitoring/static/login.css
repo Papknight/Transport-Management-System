@@ -1,0 +1,27 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+body {
+    background-image:url('img/Background-Login.jpg');
+    height: 320px;
+    width: 100%;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#login {
+    text-align: center;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:rgba(239,239,239,0.8)
+}
+
+#log-body {
+    opacity: 1;
+}
+

@@ -15,8 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Monitoring import views as monit_views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index', )
+    path('index/', monit_views.IndexView.as_view(), name="index"),
+    path('login/', auth_views.LoginView.as_view(), name="login"),
+    path('logout/', auth_views.LogoutView.as_view(), name="logout"),
+    path('order/', monit_views.OrderView.as_view(), name="order"),
+    path('today_tomorrow_view', monit_views.TodayView.as_view(), name="today_tomorrow")
+
 ]

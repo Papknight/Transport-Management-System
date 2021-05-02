@@ -1,0 +1,19 @@
+{% extends 'Monitoring/login_base.html' %}
+{% load bootstrap %}
+{% load static %}
+{% block title %}Log in{% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock %}
+{% block content %}
+<div id="login" class="card" style="width: 18rem;">
+  <div id="log-body" class="card-body">
+    <h5 class="card-title">Zaloguj się</h5>
+    <form id="form" method="post">
+        {% csrf_token %}
+        {{form|bootstrap}}
+        <button class="btn btn-outline-primary" type="submit">Zaloguj <i class="fas fa-sign-in-alt"></i></button>
+    </form>
+  </div>
+</div>
+{% endblock %}
