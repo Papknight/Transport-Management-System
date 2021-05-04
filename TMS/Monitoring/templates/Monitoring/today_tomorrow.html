@@ -16,20 +16,25 @@
 {% block content %}
 <div class="cokolwiek">
 <div class="left">
-<div class="card mar" style="width: 34rem;">
+<div class="card mar" style="width: 40rem;">
   <div class="card-body">
 <h1>Today's {{today}} schedule</h1>
+      <br>
       <table style="width:100%">
           <tr>
               <th>Hour</th>
               <th>Supplier</th>
-              <th>Pallets</th>
+              <th>Pallet</th>
+              <th>Weight</th>
+              <th>Plate</th>
           </tr>
       <tr>
       <td><b>6:00</b></td>
           {% for item in six %}
           <td>{{item.supplier.name}}</td>
           <td>{{item.pallet}}</td>
+          <td>{{item.weight}}</td>
+          <td>{{item.plate}}</td>
       {% endfor %}
       </tr>
           <tr>
@@ -37,6 +42,8 @@
       {% for item in six_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -44,13 +51,17 @@
       {% for item in seven %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
-      {% endfor %}
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
+              {% endfor %}
               </tr>
           <tr>
       <td><b>7:30</b></td>
       {% for item in seven_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -58,6 +69,8 @@
       {% for item in eight %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -65,6 +78,8 @@
       {% for item in eight_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -72,6 +87,8 @@
       {% for item in nine %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -79,6 +96,8 @@
       {% for item in nine_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -86,6 +105,8 @@
       {% for item in ten %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -93,6 +114,8 @@
       {% for item in ten_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -100,6 +123,8 @@
       {% for item in eleven %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -107,6 +132,8 @@
       {% for item in eleven_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -114,6 +141,8 @@
       {% for item in twelve %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -121,6 +150,8 @@
       {% for item in twelve_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -128,6 +159,8 @@
       {% for item in thirteen %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -135,6 +168,8 @@
       {% for item in thirteen_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -142,6 +177,8 @@
       {% for item in fourteen %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -149,6 +186,8 @@
       {% for item in fourteen_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -156,6 +195,8 @@
       {% for item in fifteen %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -163,6 +204,8 @@
       {% for item in fifteen_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -170,6 +213,8 @@
       {% for item in sixteen %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -177,6 +222,8 @@
       {% for item in sixteen_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -184,6 +231,8 @@
       {% for item in seventeen %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -191,6 +240,8 @@
       {% for item in seventeen_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -198,6 +249,8 @@
       {% for item in eighteen %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -205,6 +258,8 @@
       {% for item in eighteen_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -212,6 +267,8 @@
       {% for item in nineteen %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -219,6 +276,8 @@
       {% for item in eighteen_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -226,6 +285,8 @@
       {% for item in twenty %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -233,6 +294,8 @@
       {% for item in twenty_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -240,6 +303,8 @@
       {% for item in twenty_one %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
@@ -247,6 +312,8 @@
       {% for item in twenty_one_half %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
                 </tr>
       </table>
@@ -255,226 +322,306 @@
 </div>
 
 <div class="right">
-<div class="card mar" style="width: 34rem;">
+<div class="card mar" style="width: 40rem;">
   <div class="card-body">
-<h1>Today's {{today}} schedule</h1>
+<h1>Tomorrow's {{tomorrow}} schedule</h1>
+      <br>
       <table style="width:100%">
           <tr>
               <th>Hour</th>
               <th>Supplier</th>
-              <th>Pallets</th>
+              <th>Pallet</th>
+              <th>Weight</th>
+              <th>Plate</th>
           </tr>
       <tr>
       <td><b>6:00</b></td>
-          {% for item in six %}
+          {% for item in six_tomorrow %}
           <td>{{item.supplier.name}}</td>
           <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
       </tr>
           <tr>
       <td><b>6:30</b></td>
-      {% for item in six_half %}
+      {% for item in six_half_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>7:00</b></td>
-      {% for item in seven %}
+      {% for item in seven_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>7:30</b></td>
-      {% for item in seven_half %}
+      {% for item in seven_half_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>8:00</b></td>
-      {% for item in eight %}
+      {% for item in eight_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>8:30</b></td>
-      {% for item in eight_half %}
+      {% for item in eight_half_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>9:00</b></td>
-      {% for item in nine %}
+      {% for item in nine_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>9:30</b></td>
-      {% for item in nine_half %}
+      {% for item in nine_half_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>10:00</b></td>
-      {% for item in ten %}
+      {% for item in ten_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>10:30</b></td>
-      {% for item in ten_half %}
+      {% for item in ten_half_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>11:00</b></td>
-      {% for item in eleven %}
+      {% for item in eleven_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
+          <tr>
       <td><b>11:30</b></td>
-      {% for item in eleven_half %}
+      {% for item in eleven_half_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>12:00</b></td>
-      {% for item in twelve %}
+      {% for item in twelve_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
+          <tr>
       <td><b>12:30</b></td>
-      {% for item in twelve_half %}
+      {% for item in twelve_half_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>13:00</b></td>
-      {% for item in thirteen %}
+      {% for item in thirteen_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
+          <tr>
       <td><b>13:30</b></td>
-      {% for item in thirteen_half %}
+      {% for item in thirteen_half_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>14:00</b></td>
-      {% for item in fourteen %}
+      {% for item in fourteen_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
+          <tr>
       <td><b>14:30</b></td>
-      {% for item in fourteen_half %}
+      {% for item in fourteen_half_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>15:00</b></td>
-      {% for item in fifteen %}
+      {% for item in fifteen_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
+          <tr>
       <td><b>15:30</b></td>
-      {% for item in fifteen_half %}
+      {% for item in fifteen_half_tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>16:00</b></td>
-      {% for item in sixteen %}
+      {% for item in sixteen.tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
+          <tr>
       <td><b>16:30</b></td>
-      {% for item in sixteen_half %}
+      {% for item in sixteen_half.tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>17:00</b></td>
-      {% for item in seventeen %}
+      {% for item in seventeen.tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
+          <tr>
       <td><b>17:30</b></td>
-      {% for item in seventeen_half %}
+      {% for item in seventeen_half.tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>18:00</b></td>
-      {% for item in eighteen %}
+      {% for item in eighteen.tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
+          <tr>
       <td><b>18:30</b></td>
-      {% for item in eighteen_half %}
+      {% for item in eighteen_half.tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>19:00</b></td>
-      {% for item in nineteen %}
+      {% for item in nineteen.tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
+          <tr>
       <td><b>19:30</b></td>
-      {% for item in eighteen_half %}
+      {% for item in eighteen_half.tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>20:00</b></td>
-      {% for item in twenty %}
+      {% for item in twenty.tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
+          <tr>
       <td><b>20:30</b></td>
-      {% for item in twenty_half %}
+      {% for item in twenty_half.tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
           <tr>
       <td><b>21:00</b></td>
-      {% for item in twenty_one %}
+      {% for item in twenty_one.tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
+          <tr>
       <td><b>21:30</b></td>
-      {% for item in twenty_one_half %}
+      {% for item in twenty_one_half.tomorrow %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
+              <td>{{item.weight}}</td>
+              <td>{{item.plate}}</td>
       {% endfor %}
               </tr>
 

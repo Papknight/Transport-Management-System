@@ -14,7 +14,7 @@
 <body>
 <header class="header">
     <nav class="navbar navbar-expand-lg fixed-top py-3">
-        <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold"><img alt="" src="/img/logo.png">Dzióbek On Road<br>{{user.username}}</a>
+        <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold"><img class="brand" alt="" src="/static/img/logo.png">Dzióbek On Road<br>{{user.username}}</a>
             <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
 
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
@@ -23,7 +23,7 @@
                     <li class="nav-item"><a href="{% url 'order' %}" class="nav-link text-uppercase font-weight-bold">Delivery</a></li>
                     <li class="nav-item"><a href="{% url 'today_tomorrow' %}" class="nav-link text-uppercase font-weight-bold">Monitoring</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Portfolio</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
+                    <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link text-uppercase font-weight-bold">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -40,7 +40,7 @@
 </div>
 {% block content %}
 {% endblock %}
-<script src="time.js"></script>
+<script src="/static/time.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
