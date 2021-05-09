@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from .forms import OrderForm
 from .models import Order
+from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model, authenticate, login, logout
 from django.views.generic import ListView, FormView, RedirectView
 from django.urls import reverse_lazy
@@ -19,10 +20,11 @@ class IndexView(View):
 
 class OrderView(View):
     def get(self, request):
+        user = request.user
         form = OrderForm
         today = date.today()
         tomorrow = date.today() + timedelta(days=1)
-        today_order = Order.objects.filter(date=today)
+        today_order = Order.objects.filter(date=today, user=user)
         context = {
             "form": form,
             "new": True,
@@ -31,12 +33,23 @@ class OrderView(View):
         return render(request, 'Monitoring/order_form.html', context)
 
     def post(self, request):
+        user = request.user
         form = OrderForm(request.POST)
+
         if not form.is_valid():
             return redirect('Monitoring/index.html')
         else:
             try:
-                form.save()
+                obj = Order()
+                obj.supplier = form.cleaned_data["supplier"]
+                obj.pallet = form.cleaned_data["pallet"]
+                obj.weight = form.cleaned_data["weight"]
+                obj.date = form.cleaned_data["date"]
+                obj.hour = form.cleaned_data["hour"]
+                obj.plate = form.cleaned_data["plate"]
+                obj.user = user
+                # obj.user = form.cleaned_data[user.id]
+                obj.save()
             except Exception as e:
                 ctx = {'error': e}
                 return render(request, 'registration/login.html', ctx)
