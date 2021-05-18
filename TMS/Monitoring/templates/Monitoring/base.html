@@ -21,9 +21,17 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="{% url 'index' %}" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a></li>
                     <li class="nav-item"><a href="{% url 'order' %}" class="nav-link text-uppercase font-weight-bold">Delivery</a></li>
+                    {% if user.is_superuser == 1 %}
                     <li class="nav-item"><a href="{% url 'today_tomorrow' %}" class="nav-link text-uppercase font-weight-bold">Monitoring</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Portfolio</a></li>
+                    {% else %}
+                    <li class="nav-item"><a href="{% url 'transport' %}" class="nav-link text-uppercase font-weight-bold">Transports</a></li>
+                    {% endif %}
+                    <li class="nav-item"><a href="{% url 'portfolio' %}" class="nav-link text-uppercase font-weight-bold">Portfolio</a></li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link text-uppercase font-weight-bold">Logout</a></li>
+                    {% else %}
+                    <li class="nav-item"><a href="{% url 'login' %}" class="nav-link text-uppercase font-weight-bold">Login</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -33,13 +41,22 @@
 <div class="container">
     <div class="pt-5 text-white">
         <header class="py-5 mt-5">
-            <h1 class="display-4">{% block nav %}{% endblock %}</h1>
+            <h1 class="display-4">
+                {% if user.is_authenticated %}
+                {% block nav %}{% endblock %}</h1>
             <p class="lead mb-0">{% block nav_desc %}{% endblock %}</p>
+        {% else %}
+            Aby przeglądać stronę, musisz się zalogować
+            {% endif %}
         </header>
     </div>
 </div>
+{% if user.is_authenticated %}
 {% block content %}
 {% endblock %}
+{% else %}
+<h1>Zaloguj się</h1>
+{% endif %}
 <script src="/static/time.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

@@ -24,6 +24,9 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(), name="login"),
     path('logout/', auth_views.LogoutView.as_view(), name="logout"),
     path('order/', monit_views.OrderView.as_view(), name="order"),
-    path('today_tomorrow_view', monit_views.TodayView.as_view(), name="today_tomorrow")
-
+    path('today_tomorrow_view/', monit_views.TodayView.as_view(), name="today_tomorrow"),
+    path('order/update/<int:pk>/', monit_views.UpdateOrderView.as_view(), name="update_order"),
+    path('order/delete/<int:pk>/', monit_views.DeleteOrderView.as_view(), name="delete_order"),
+    path('transports/', monit_views.TransportView.as_view(), name="transport"),
+    path('portfolio/', monit_views.PortfolioView.as_view(), name="portfolio")
 ]

@@ -8,12 +8,11 @@
 {% block nav %}
 {{today}}
 {% endblock %}
-
 {% block nav_desc %}
-
 {% endblock %}
 
 {% block content %}
+{% if user.is_superuser == 1 %}
 <div class="cokolwiek">
 <div class="left">
 <div class="card mar" style="width: 40rem;">
@@ -375,8 +374,6 @@
           <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
-              <td>{{item.weight}}</td>
-              <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
       {% endfor %}
       </tr>
@@ -696,4 +693,12 @@
   </div>
 </div>
     </div>
+{% else %}
+<p>Cokolwiek</p>
+{{orders}}
+{% for order in orders %}
+<p>{{ order.supplier }}</p>
+{% endfor %}
+<p>Nie wiem</p>
+{% endif %}
 {% endblock %}

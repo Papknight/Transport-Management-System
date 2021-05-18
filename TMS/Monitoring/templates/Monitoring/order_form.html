@@ -12,6 +12,9 @@ Take an appointment
 Fill all fields to correctly book delivery.
 {% endblock %}
 {% block content %}
+
+<div class="cokolwiek">
+<div class="left">
 <div class="card mar" style="width: 30rem; margin-left: 3rem">
   <div class="card-body">
           {% if new %}
@@ -19,6 +22,7 @@ Fill all fields to correctly book delivery.
     {% else %}
         <h5 class="card-title">Update order</h5>
     {% endif %}
+      {% include 'Monitoring/message.html' %}
 <form method="POST" enctype="multipart/form-data">
     {{form|bootstrap}}
     {% if new %}
@@ -30,6 +34,8 @@ Fill all fields to correctly book delivery.
 </form>
   </div>
 </div>
+</div>
+    {% if new %}
 <div class="right">
 <div class="card mar" style="width: 40rem;">
   <div class="card-body">
@@ -42,328 +48,518 @@ Fill all fields to correctly book delivery.
               <th>Pallet</th>
               <th>Weight</th>
               <th>Plate</th>
-              <th>Forwarder</th>
+              <th>Update</th>
+              <th>Delete</th>
           </tr>
       <tr>
       <td><b>6:00</b></td>
           {% for item in six_tomorrow %}
+          {% if item.user.username == user.username %}
           <td>{{item.supplier.name}}</td>
           <td>{{item.pallet}}</td>
-              <td>{{item.weight}}</td>
-              <td>{{item.plate}}</td>
-              <td>{{item.weight}}</td>
-              <td>{{item.plate}}</td>
-              <td>{{item.user.username}}</td>
+          <td>{{item.weight}}</td>
+          <td>{{item.plate}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
       </tr>
           <tr>
       <td><b>6:30</b></td>
       {% for item in six_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>7:00</b></td>
       {% for item in seven_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>7:30</b></td>
       {% for item in seven_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>8:00</b></td>
       {% for item in eight_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>8:30</b></td>
       {% for item in eight_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>9:00</b></td>
       {% for item in nine_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
-      <td><b>9:30</b></td>
-      {% for item in nine_half_tomorrow %}
+              <td><b>9:30</b></td>
+              {% for item in nine_half_tomorrow %}
+              {% if item.user.username == user.username %}
               <td>{{item.supplier.name}}</td>
               <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
-      {% endfor %}
-              </tr>
+              <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+              <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+              {% else %}
+              <td colspan="7">Taken</td>
+              {% endif %}
+              {% endfor %}
+          </tr>
           <tr>
       <td><b>10:00</b></td>
       {% for item in ten_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>10:30</b></td>
       {% for item in ten_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+              {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>11:00</b></td>
       {% for item in eleven_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>11:30</b></td>
       {% for item in eleven_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>12:00</b></td>
       {% for item in twelve_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>12:30</b></td>
       {% for item in twelve_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>13:00</b></td>
       {% for item in thirteen_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>13:30</b></td>
       {% for item in thirteen_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>14:00</b></td>
       {% for item in fourteen_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>14:30</b></td>
       {% for item in fourteen_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>15:00</b></td>
       {% for item in fifteen_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>15:30</b></td>
       {% for item in fifteen_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>16:00</b></td>
       {% for item in sixteen_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>16:30</b></td>
       {% for item in sixteen_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>17:00</b></td>
       {% for item in seventeen_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>17:30</b></td>
       {% for item in seventeen_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>18:00</b></td>
       {% for item in eighteen_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>18:30</b></td>
       {% for item in eighteen_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>19:00</b></td>
       {% for item in nineteen_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>19:30</b></td>
       {% for item in nineteen_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>20:00</b></td>
       {% for item in twenty_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>20:30</b></td>
       {% for item in twenty_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>21:00</b></td>
       {% for item in twenty_one_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
           <tr>
       <td><b>21:30</b></td>
       {% for item in twenty_one_half_tomorrow %}
-              <td>{{item.supplier.name}}</td>
-              <td>{{item.pallet}}</td>
+          {% if item.user.username == user.username %}
+          <td>{{item.supplier.name}}</td>
+          <td>{{item.pallet}}</td>
               <td>{{item.weight}}</td>
               <td>{{item.plate}}</td>
               <td>{{item.user.username}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' item.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' item.id %}" role="button">Delete</a></td>
+          {% else %}
+          <td colspan="7">Taken</td>
+          {% endif %}
       {% endfor %}
               </tr>
 
@@ -371,5 +567,6 @@ Fill all fields to correctly book delivery.
 </div>
   </div>
 </div>
-
+</div>
+{% endif %}
 {% endblock %}

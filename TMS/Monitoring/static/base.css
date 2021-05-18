@@ -118,3 +118,28 @@ body {
 .right {
     margin-left: 44rem;
 }
+
+.tran {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 250px;
+}
+
+.por {
+    margin-left: 2rem;
+    text-align: center;
+}
+
+.up {
+    height: 50%;
+}
+
+.down {
+    height: 50%;
+}

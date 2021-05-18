@@ -1,0 +1,32 @@
+{% extends 'Monitoring/base.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}Order{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'base.css' %}">{% endblock %}
+{% block nav %}
+{% endblock %}
+{% block nav_desc %}
+<h1>Do you want to delete this delivery order?</h1>
+<ul>
+    <li><b>Supplier: </b>{{object.supplier}}</li>
+    <li><b>Date: </b>{{object.date}}</li>
+    <li><b>Hour: </b>{{object.hour}}</li>
+    <li><b>Pallet: </b>{{object.pallet}} pcs.</li>
+    <li><b>Weight: </b>{{object.weight}} kg</li>
+    <li><b>Plate: </b>{{object.plate}}</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+    <form method="post" novalidate style="margin-left: 8rem">
+        {% csrf_token %}
+        <input class="btn btn-sm btn-danger" type="submit" value="Confirm">
+        {% if user.is_superuser %}
+          <a class="btn btn-sm btn-info" href="{% url 'today_tomorrow' %}" role="button">Back</a>
+        {% else %}
+        <a class="btn btn-sm btn-info" href="{% url 'transport' %}" role="button">Back</a>
+        {% endif %}
+    </form>
+{% endblock %}
