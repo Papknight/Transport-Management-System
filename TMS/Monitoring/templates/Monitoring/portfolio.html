@@ -1,0 +1,51 @@
+{% extends 'Monitoring/base.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}Order{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'base.css' %}">{% endblock %}
+{% block nav %}
+<h1>Dzióbek on Road in numbers</h1>
+{% endblock %}
+{% block nav_desc %}
+{{today}}
+{% endblock %}
+{% block content %}
+<div class="portfolio">
+<div class="card mar por" style="width: 20rem;">
+  <div class="card-body port">
+    <div class="up">
+    <h1>Deliveries</h1>
+      <p>in last 30 days</p>
+    </div>
+    <hr>
+    <div class="down">
+    <h3>{{orders|length}}</h3>
+  </div>
+    </div>
+</div>
+<div class="card mar por" style="width: 20rem;">
+  <div class="card-body">
+    <div class="up">
+    <h1>Forwarders</h1>
+    </div>
+    <hr>
+    <div class="down">
+    <h3>{{users}}</h3>
+  </div>
+  </div>
+</div>
+<div class="card mar por" style="width: 20rem;">
+  <div class="card-body">
+    <div class="up">
+    <h1>Suppliers</h1>
+    </div>
+    <hr>
+    <div class="down">
+    <h3>{{suppliers.count}}</h3>
+  </div>
+  </div>
+</div>
+</div>
+{% endblock %}

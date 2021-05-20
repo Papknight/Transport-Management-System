@@ -1,0 +1,42 @@
+{% extends 'Monitoring/base.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}Order{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'base.css' %}">{% endblock %}
+{% block nav %}
+{{user.username}} transports list since
+{% endblock %}
+{% block nav_desc %}
+{{today}}
+{% endblock %}
+{% block content %}
+<div class="card mar tran" style="width: 70rem;">
+  <div class="card-body">
+      <table style="width:100%">
+          <tr>
+              <th>Date</th>
+              <th>Hour</th>
+              <th>Supplier</th>
+              <th>Pallet</th>
+              <th>Weight</th>
+              <th>Plate</th>
+              <th>Update</th>
+              <th>Delete</th>
+          </tr>
+    {% for order in orders %}
+      <tr>
+          {% if order.user.username == user.username %}
+          <td>{{order.date}}</td>
+          <td>{{order.hour}}</td>
+          <td>{{order.supplier.name}}</td>
+          <td>{{order.pallet}}</td>
+          <td>{{order.weight}}</td>
+          <td>{{order.plate}}</td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'update_order' order.id %}" role="button">Update</a></td>
+          <td><a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_order' order.id %}" role="button">Delete</a></td>
+          {% endif %}
+          {% endfor %}
+      </tr>
+{% endblock %}

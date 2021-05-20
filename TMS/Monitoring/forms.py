@@ -27,7 +27,7 @@ class UserLoginForm(forms.ModelForm):
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ['supplier', 'pallet', 'weight', 'date', 'hour', 'plate']
+        fields = ('supplier', 'pallet', 'weight', 'date', 'hour', 'plate')
         widgets = {
             'date': forms.SelectDateWidget,
         }

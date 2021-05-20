@@ -8,11 +8,11 @@
 {% block content %}
 <div id="login" class="card" style="width: 18rem;">
   <div id="log-body" class="card-body">
-    <h5 class="card-title">Zaloguj się</h5>
+    <h5 class="card-title">Log in</h5>
     <form id="form" method="post">
         {% csrf_token %}
         {{form|bootstrap}}
-        <button class="btn btn-outline-primary" type="submit">Zaloguj <i class="fas fa-sign-in-alt"></i></button>
+        <button class="btn btn-outline-primary" type="submit">Log in <i class="fas fa-sign-in-alt"></i></button>
     </form>
   </div>
 </div>

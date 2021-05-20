@@ -1,7 +1,21 @@
-h1 {
-    color: red;
+div > div > h1 {
+    text-align: center;
+    font-size: 35px;
 }
 
+th {
+       text-align: center;
+  border-bottom-style: ridge;
+  border-bottom-width: 7px;
+  border-bottom-color: lightcoral;
+}
+
+td {
+    text-align: center;
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+        border-collapse: collapse;
+}
 
 .left {
     width: 50%;
@@ -38,6 +52,10 @@ h1 {
     color: #fff;
 }
 
+.brand {
+    width: 70px;
+    height: 70px;
+}
 
 .navbar.active {
     background: #fff;
@@ -98,5 +116,30 @@ body {
 }
 
 .right {
-    margin-left: 50rem;
+    margin-left: 44rem;
+}
+
+.tran {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 250px;
+}
+
+.por {
+    margin-left: 2rem;
+    text-align: center;
+}
+
+.up {
+    height: 50%;
+}
+
+.down {
+    height: 50%;
 }
